@@ -3,11 +3,10 @@ import argparse
 import logging
 import yaml
 
-from natebbcommon.logger import initialise_logger
-from sklearn import datasets
-
-from config.experiment import ConfigExperiment
 from trains import Task
+from sklearn import datasets
+from natebbcommon.config.experiment import ConfigExperiment
+from natebbcommon.logger import initialise_logger
 
 from config.my_knn_classifier import ConfigMyKNNClassifier
 from models.my_knn_classifier import MyKNNClassifier

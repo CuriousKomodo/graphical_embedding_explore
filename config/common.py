@@ -1,6 +1,6 @@
 import os
 
-from config.base import ConfigBase
+from natebbcommon.config.base import ConfigBase
 
 
 class ConfigCommon(ConfigBase):

@@ -1,2 +1,5 @@
+ConfigCommon:
+  TRAINED_MODEL_DIR : /home/ubuntu/lucas/my_dir
+
 ConfigMyKNNClassifier:
   n_neighbors : 20

@@ -26,6 +26,22 @@ python train_my_model.py --experiment-config ./experiments/experiment_1.yaml
 
 # Trains
 
+The only lines of code you will need at the start of your main script (e.g train model script) are:
+
+```python
+from trains import Task
+from natebbcommon.config.experiment import ConfigExperiment
+
+# load the experiment config here if needed
+
+task = Task.init(project_name="nate.blackbox.base", task_name="Test 1",
+                 output_uri='/home/ubuntu/data_store/trains/snapshots')
+
+task.connect_configuration(ConfigExperiment.config)
+
+# Do everything else afterwards
+```
+
 ## trains.conf
 
 The instance you are running trains on should have a trains.conf file installed  

@@ -16,7 +16,8 @@ ConfigMyKNNClassifier:
 ConfigMyMLPClassifier:
   epochs : 10
 ```
-will only modify the `n_neighbors` parameter in ConfigMyKNNClassifier
+will only modify the `n_neighbors` parameter in ConfigMyKNNClassifier and 
+`epochs` in ConfigMyMLPClassifier.
 
 Experiment Configuration has to be loaded at the start of your script, as shown in `train_my_model.py`
 

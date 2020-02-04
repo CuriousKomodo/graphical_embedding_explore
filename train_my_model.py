@@ -5,6 +5,7 @@ import yaml
 import numpy as np
 from trains import Task
 from sklearn import datasets
+
 from natebbcommon.config.experiment import ConfigExperiment
 from natebbcommon.logger import initialise_logger
 from natebbcommon.io_funcs import create_directory_path_with_timestamp
@@ -39,7 +40,7 @@ def main():
     sample_model_loaded.load(output_path)
     predicted_labels_loaded = sample_model_loaded.predict(x)
 
-    assert np.array_equal(predicted_labels,predicted_labels_loaded) is True
+    assert np.array_equal(predicted_labels, predicted_labels_loaded) is True
     module_logger.info('Finished !')
 
 

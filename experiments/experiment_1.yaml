@@ -1,3 +1,6 @@
+# First level is the class name relative to the classes present in ./config/
+#   Second level are the class level attributes
+
 ConfigCommon:
   TRAINED_MODEL_DIR : /home/ubuntu/lucas/my_dir
 

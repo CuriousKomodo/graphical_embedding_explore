@@ -17,11 +17,6 @@ module_logger = logging.getLogger('main_app.train_my_model')
 
 
 def main():
-    task = Task.init(project_name="nate.blackbox.base", task_name="Test 1",
-                     output_uri='/home/ubuntu/data_store/trains/snapshots')
-
-    task.connect_configuration(ConfigExperiment.config)
-
     output_path = create_directory_path_with_timestamp(ConfigCommon().TRAINED_MODEL_DIR)
 
     # import some data to play with
@@ -58,5 +53,10 @@ if __name__ == '__main__':
     root_logger = initialise_logger(syslog_server='logs4.papertrailapp.com',
                                     syslog_port=49313,
                                     syslog_hostname='nate.blackbox.base')
+
+    task = Task.init(project_name='nate.blackbox.base', task_name=ConfigCommon().trains_experiment_name,
+                     output_uri='/home/ubuntu/data_store/trains/snapshots')
+
+    task.connect_configuration(ConfigExperiment.config)
 
     main()

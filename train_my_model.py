@@ -45,17 +45,17 @@ if __name__ == '__main__':
                         help='Experiment configuration file to load.')
     pargs = parser.parse_args()
 
+    root_logger = initialise_logger(syslog_server='logs4.papertrailapp.com',
+                                    syslog_port=49313,
+                                    syslog_hostname='nate.blackbox.base')
+
     if pargs.experiment_config:
         with open(pargs.experiment_config, 'r') as yaml_file:
             ConfigExperiment.config = yaml.load(yaml_file, Loader=yaml.FullLoader)
             module_logger.info('Loaded experiment configuration: {}'.format(ConfigExperiment.config))
 
-    root_logger = initialise_logger(syslog_server='logs4.papertrailapp.com',
-                                    syslog_port=49313,
-                                    syslog_hostname='nate.blackbox.base')
-
-    task = Task.init(project_name='nate.blackbox.base', task_name=ConfigCommon().trains_experiment_name,
-                     output_uri='/home/ubuntu/data_store/trains/snapshots')
+    task = Task.init(project_name='nate.blackbox.base', task_name=ConfigCommon().experiment_name,
+                     output_uri='/home/ubuntu/data_store/trains/snapshots', reuse_last_task_id=True)
 
     task.connect_configuration(ConfigExperiment.config)
 

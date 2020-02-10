@@ -47,9 +47,16 @@ task.connect_configuration(ConfigExperiment.config)
 
 The instance you are running trains on should have a trains.conf file installed under `/home/ubuntu/trains.conf`
 
+If this file is absent then you can restore it using:
+
+```bash
+ln -s /home/ubuntu/data_store/trains/config_home/trains.conf /home/ubuntu/trains.conf
+```
+
 ## PyCharm plugin
 
 To use Trains with PyCharm you need to have the PyCharm plugin installed.
-You can find it here:  https://github.com/allegroai/trains-pycharm-plugin/releases
+You can find it on their [pycharm plugin repository](https://github.com/allegroai/trains-pycharm-plugin/releases "github.com/allegroai")
+and the instructions for installing it are [here](https://allegro.ai/docs/deploying_trains/trains_plugins/#trains-pycharm-plugin "allegro.ai/docs").
 
-The plugin configuration is stored in the `dev/trains` secret in the AWS Secrets Manager
+The plugin configuration is stored in the [dev/trains](https://eu-west-1.console.aws.amazon.com/secretsmanager/home?region=eu-west-1#/secret?name=dev%2Ftrains) secret in the AWS Secrets Manager

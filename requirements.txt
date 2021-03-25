@@ -1,4 +1,4 @@
-PyYAML==5.3
+PyYAML==5.4
 trains==0.13.2
 matplotlib==3.0.3
 scikit-learn==0.22.1

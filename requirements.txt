@@ -3,5 +3,5 @@ trains==0.13.2
 matplotlib==3.0.3
 scikit-learn==0.22.1
 seaborn==0.9.1
-numpy==1.18.1
+numpy==1.22.0
 git+ssh://git@github.com/NateAI/nate.blackbox.common.git@1.8.0#egg=nate-blackbox-common
